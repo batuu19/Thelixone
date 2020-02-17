@@ -71,7 +71,8 @@
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Model\Car.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
-    <Compile Include="Assets\Scripts\UI\GoToScene.cs" />
+    <Compile Include="Assets\Scripts\UI\CarSceneUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenuUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
