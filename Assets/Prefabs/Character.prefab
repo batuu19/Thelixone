@@ -269,9 +269,10 @@ GameObject:
   - component: {fileID: 1544533938339423988}
   - component: {fileID: 2910190840735004424}
   - component: {fileID: 4770582860350940511}
+  - component: {fileID: 839752343724012021}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,7 +306,7 @@ Animator:
   m_GameObject: {fileID: 1376088717753500898}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4297eb9573b6ef848bd74fb8a723e159, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01d688189e05a16408f7a5440572391a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -326,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258871cbd1e10684e949ec90c8339ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWalking: 0
 --- !u!50 &4770582860350940511
 Rigidbody2D:
   serializedVersion: 4
@@ -348,6 +348,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &839752343724012021
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376088717753500898}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5195427353302745526
 GameObject:
   m_ObjectHideFlags: 0
