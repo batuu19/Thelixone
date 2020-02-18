@@ -37,6 +37,11 @@ namespace Giereczka.UI
         {
             SceneManager.LoadScene("MainMenuScene");
         }
+        public void ExitToWorld()
+        {
+            SceneManager.LoadScene("World");
+        }
+
 
         public void Quit()
         {
