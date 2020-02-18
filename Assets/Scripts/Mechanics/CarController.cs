@@ -12,7 +12,7 @@ namespace Giereczka.Mechanics
         private Rigidbody2D body;
         private Collider2D collider2d;
         private SpriteRenderer spriteRenderer;
-
+        internal float damage = 30;
         readonly GameModel gameModel = Simulation.GetModel<GameModel>();
         private void Awake()
         {

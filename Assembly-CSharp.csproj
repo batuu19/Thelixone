@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlaceEnter.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\SquareEnemyController.cs" />
     <Compile Include="Assets\Scripts\Model\Car.cs" />
     <Compile Include="Assets\Scripts\Model\Character.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
