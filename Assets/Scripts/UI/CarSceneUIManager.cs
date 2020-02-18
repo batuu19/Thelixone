@@ -40,9 +40,8 @@ namespace Giereczka.UI
         public void ExitToWorld()
         {
             SceneManager.LoadScene("World");
+            Time.timeScale = 1;
         }
-
-
         public void Quit()
         {
             Application.Quit();
