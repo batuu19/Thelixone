@@ -8,6 +8,10 @@ namespace Giereczka.Model
     {
         public Camera camera;
 
-        public PlayerController player;
+        public Player player = new Player();
+
+        public Character character = new Character();
+
+        public Car car = new Car();
     }
 }

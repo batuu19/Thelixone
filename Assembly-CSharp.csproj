@@ -65,12 +65,15 @@
     <Compile Include="Assets\Scripts\Core\Simulation.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.InstanceRegister.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\CarController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Controller.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Model\Car.cs" />
+    <Compile Include="Assets\Scripts\Model\Character.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
+    <Compile Include="Assets\Scripts\Model\Player.cs" />
     <Compile Include="Assets\Scripts\UI\CarSceneUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
