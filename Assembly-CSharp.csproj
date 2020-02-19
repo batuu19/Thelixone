@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Mechanics\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Controller.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlaceEnter.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SquareEnemyController.cs" />
