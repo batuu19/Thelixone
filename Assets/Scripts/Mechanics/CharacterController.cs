@@ -4,39 +4,37 @@ using Giereczka.Core;
 
 namespace Giereczka.Mechanics
 {
-    public class CharacterController : MonoBehaviour
+    public class CharacterController : PlayableController
     {
         Animator animator;
         Vector2 move;
         Rigidbody2D body;
-        Character character;
-
-        readonly GameModel gameModel = Simulation.GetModel<GameModel>();
-
-        private void Awake()
+        CharacterModel character;
+        
+        protected override void Init()
         {
             animator = GetComponent<Animator>();
             body = GetComponent<Rigidbody2D>();
         }
 
-        private void Start()
+        protected override void PostInit()
         {
             move = Vector2.zero;
             character = gameModel.character;
         }
 
-        private void Update()
+        protected override void ProcessInput()
         {
             float axisVert = Input.GetAxisRaw("Vertical");
             float axisHor = Input.GetAxisRaw("Horizontal");
 
             move = (Vector2.up * axisVert) + (Vector2.right * axisHor);
-            
+
             if (axisVert == 0 && axisHor == 0) animator.SetBool("isWalking", false);
             else animator.SetBool("isWalking", true);
         }
 
-        private void FixedUpdate()
+        protected override void MakeCalculations()
         {
             body.velocity = move * Time.deltaTime * character.speed;
             var dir = body.velocity;

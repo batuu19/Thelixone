@@ -4,37 +4,37 @@ using Giereczka.Core;
 
 namespace Giereczka.Mechanics
 {
-    public class CarController : MonoBehaviour
+    public class CarController : PlayableController
     {
-        Car car;
+        CarModel car;
         float moveAcc = 0f;
         float moveRot = 0f;
         private Rigidbody2D body;
         private Collider2D collider2d;
         private SpriteRenderer spriteRenderer;
-        readonly GameModel gameModel = Simulation.GetModel<GameModel>();
 
         public float AttackDamage { get; private set; } = 30;
 
-        private void Awake()
+        protected override void Init()
         {
             body = GetComponent<Rigidbody2D>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-            car = gameModel.car;
+            car = gameModel.car;//that's what I'm working on
         }
-        private void Start()
+
+        protected override void PostInit()
         {
             body.gravityScale = 0;
         }
 
-        public void Update()
+        protected override void ProcessInput()
         {
             moveRot = Input.GetAxisRaw("Horizontal");
             moveAcc = Input.GetAxisRaw("Vertical");
         }
 
-        private void FixedUpdate()
+        protected override void MakeCalculations()
         {
             body.velocity = transform.rotation * Vector2.up * moveAcc * Time.deltaTime * car.speed;
 
