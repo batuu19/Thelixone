@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using Giereczka.Core;
-using Giereczka.Structure.Model;
-using Giereczka.Structure.Entities;
+using Giereczka.Model;
 
 namespace Giereczka.Mechanics
 {

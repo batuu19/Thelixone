@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{EB4C7FCB-66DA-D5AD-160D-FB4B0E122FC4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -124,15 +125,10 @@
     <Compile Include="Assets\Scripts\Mechanics\PlaceEnter.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayebleController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SquareEnemyController.cs" />
-    <Compile Include="Assets\Scripts\Structure\Entities\Car.cs" />
-    <Compile Include="Assets\Scripts\Structure\Entities\Character.cs" />
-    <Compile Include="Assets\Scripts\Structure\Entities\IEntity.cs" />
-    <Compile Include="Assets\Scripts\Structure\Entities\Player.cs" />
-    <Compile Include="Assets\Scripts\Structure\Model\CarModel.cs" />
-    <Compile Include="Assets\Scripts\Structure\Model\CharacterModel.cs" />
-    <Compile Include="Assets\Scripts\Structure\Model\GameModel.cs" />
-    <Compile Include="Assets\Scripts\Structure\Model\Model.cs" />
-    <Compile Include="Assets\Scripts\Structure\ModelContainer.cs" />
+    <Compile Include="Assets\Scripts\Model\Car.cs" />
+    <Compile Include="Assets\Scripts\Model\Character.cs" />
+    <Compile Include="Assets\Scripts\Model\IEntity.cs" />
+    <Compile Include="Assets\Scripts\Model\Player.cs" />
     <Compile Include="Assets\Scripts\UI\CarSceneUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
