@@ -9,6 +9,9 @@ namespace Giereczka.Model
         //public GameObject carPrefab;//?
         public float speed { get; set; } = 400f;
         public float rotSpeed { get; set; } = 150f;
+        public float attackDamage { get; set; } = 30f;
+
+        public Car Build() => new Car(speed, rotSpeed,attackDamage);
     }
 }
 

@@ -6,12 +6,12 @@ namespace Giereczka.Model
     [System.Serializable]
     public class GameModel
     {
-        public Camera camera;
+        public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
-        public PlayerModel player = new PlayerModel();
+        public PlayerModel initPlayer;
 
-        public CharacterModel character = new CharacterModel();
+        public CharacterModel initCharacter;
 
-        public CarModel car = new CarModel();
+        public CarModel initCar;
     }
 }

@@ -6,8 +6,7 @@ using UnityEngine;
 namespace Giereczka.Core
 {
     /// <summary>
-    /// The Simulation class NOW DOES NOT implements the discrete event simulator pattern.
-    /// Events are pooled, with a default capacity of 4 instances.
+    /// The Simulation class used for storing data for the game
     /// </summary>
     public static partial class Simulation
     {

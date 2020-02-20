@@ -6,7 +6,7 @@ namespace Giereczka.Mechanics
 {
     public class CarController : PlayableController
     {
-        CarModel car;
+        Car car;
         float moveAcc = 0f;
         float moveRot = 0f;
         private Rigidbody2D body;
@@ -20,7 +20,7 @@ namespace Giereczka.Mechanics
             body = GetComponent<Rigidbody2D>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-            car = gameModel.car;//that's what I'm working on
+            car = Simulation.player.car;
         }
 
         protected override void PostInit()

@@ -9,5 +9,7 @@ namespace Giereczka.Model
     public class CharacterModel
     {
         public float speed = 100f;
+
+        public Character Build() => new Character(speed);
     }
 }

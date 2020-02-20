@@ -9,7 +9,7 @@ namespace Giereczka.Mechanics
         Animator animator;
         Vector2 move;
         Rigidbody2D body;
-        CharacterModel character;
+        Character character;
         
         protected override void Init()
         {
@@ -20,7 +20,7 @@ namespace Giereczka.Mechanics
         protected override void PostInit()
         {
             move = Vector2.zero;
-            character = gameModel.character;
+            character = Simulation.player.character;
         }
 
         protected override void ProcessInput()
