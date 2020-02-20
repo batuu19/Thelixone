@@ -10,7 +10,6 @@ namespace Giereczka.Mechanics
     /// </summary>
     public abstract class PlayableController :  MonoBehaviour
     {
-        protected readonly GameModel gameModel = Simulation.GetModel<GameModel>();
         /// <summary>
         /// Will be processed in Awake()
         /// </summary>

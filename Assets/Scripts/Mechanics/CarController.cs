@@ -14,7 +14,7 @@ namespace Giereczka.Mechanics
         private Collider2D collider2d;
         private SpriteRenderer spriteRenderer;
 
-        public float AttackDamage { get; private set; } = 30;
+        public float AttackDamage => car.attackDamage;
 
         protected override void Init()
         {

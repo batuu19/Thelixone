@@ -4,15 +4,15 @@ using Giereczka.Structure.Entities;
 
 namespace Giereczka.Structure.Model
 {
-    [System.Serializable]
-    public class GameModel
-    {
-        public Cinemachine.CinemachineVirtualCamera virtualCamera;
+    //[System.Serializable]
+    //public class GameModel
+    //{
+    //    public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
-        public PlayerModel initPlayer;
+    //    public PlayerModel initPlayer;
 
-        public CharacterModel initCharacter;
+    //    public CharacterModel initCharacter;
 
-        public CarModel initCar;
-    }
+    //    public CarModel initCar;
+    //}
 }
