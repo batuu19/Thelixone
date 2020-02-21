@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.IO;
+using System.Security.AccessControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,14 @@ namespace Giereczka.Mechanics
         public Canvas pauseMenu;
         public bool inPauseMenu = false;
 
+        protected void Awake()
+        {
+            if (!Directory.Exists(Application.persistentDataPath))
+            {
+                Directory.CreateDirectory(Application.persistentDataPath);
+            }
+                
+        }
         protected void Start()
         {
             pauseMenu.enabled = inPauseMenu;

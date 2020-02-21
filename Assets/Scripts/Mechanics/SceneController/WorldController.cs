@@ -8,8 +8,9 @@ namespace Giereczka.Mechanics
     {
         public GameObject character;
         CharacterController characterController;
-        private void Awake()
+        protected new void Awake()
         {
+            base.Awake();
             characterController = character.GetComponent<CharacterController>();
         }
 

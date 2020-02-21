@@ -18,21 +18,21 @@ namespace Giereczka.Mechanics
         [SerializeField]
         Vector2 lastSeen;
 
-        public static readonly string gameSavePath = $"{Application.persistentDataPath}\\Save\\gamesave.json";
+        public static readonly string gameSavePath = $"{Application.persistentDataPath}\\Save";
+        public static readonly string gameSaveFile = $"{Application.persistentDataPath}\\Save\\gamesave.json";
 
         public static void Save(Vector2 pos)
         {
+            //xml?
             string json = JsonUtility.ToJson(new GameSave()
             {
                 playerData = Simulation.player,
                 dateTime = DateTime.Now,
                 lastSeen = pos
             });
-            using (FileStream fs = File.Create(gameSavePath))
-            {
-                byte[] text = new UTF8Encoding(true).GetBytes(json);
-                fs.Write(text,0,text.Length);
-            }
+            if (!Directory.Exists(gameSavePath))
+                Directory.CreateDirectory(gameSavePath);
+            File.WriteAllText(gameSaveFile,json);
 
         }
         public static Vector2 Load()
