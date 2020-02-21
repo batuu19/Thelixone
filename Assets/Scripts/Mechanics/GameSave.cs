@@ -24,6 +24,7 @@ namespace Giereczka.Mechanics
         public static void Save(Vector2 pos)
         {
             //xml?
+            //binary data?
             string json = JsonUtility.ToJson(new GameSave()
             {
                 playerData = Simulation.player,

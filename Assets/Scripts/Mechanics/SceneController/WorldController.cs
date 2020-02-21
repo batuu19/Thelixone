@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace Giereczka.Mechanics
 {
-    public class WorldController : SceneController
+    public class WorldController : GameSceneController
     {
         public GameObject character;
         CharacterController characterController;
-        protected new void Awake()
+        protected void Awake()
         {
-            base.Awake();
             characterController = character.GetComponent<CharacterController>();
         }
 

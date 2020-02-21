@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Security.AccessControl;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Giereczka.Mechanics
@@ -10,55 +8,15 @@ namespace Giereczka.Mechanics
     /// </summary>
     public class SceneController : MonoBehaviour
     {
-        public Canvas pauseMenu;
-        public bool inPauseMenu = false;
-
-        protected void Awake()
-        {
-            if (!Directory.Exists(Application.persistentDataPath))
-            {
-                Directory.CreateDirectory(Application.persistentDataPath);
-            }
-                
-        }
-        protected void Start()
-        {
-            pauseMenu.enabled = inPauseMenu;
-        }
-
-        protected void Update()
-        {
-            if (Input.GetButtonDown("Cancel"))
-            {
-                if (!inPauseMenu)
-                    EnterPauseMenu();
-                else
-                    ExitPauseMenu();
-            }
-        }
-
-        protected void OnDestroy()
-        {
-            Time.timeScale = 1;
-        }
-
-        public void EnterPauseMenu()
-        {
-            inPauseMenu = true;
-            pauseMenu.enabled = true;
-            Time.timeScale = 0;
-        }
-
-        public void ExitPauseMenu()
-        {
-            inPauseMenu = false;
-            pauseMenu.enabled = false;
-            Time.timeScale = 1;
-        }
 
         public void LoadScene(string sceneName)
         {
             SceneManager.LoadScene(sceneName);
+        }
+
+        public void LoadSceneAdditive(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
 
         public void ExitToMainMenu()

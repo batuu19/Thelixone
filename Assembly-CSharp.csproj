@@ -126,8 +126,11 @@
     <Compile Include="Assets\Scripts\Mechanics\GameSave.cs" />
     <Compile Include="Assets\Scripts\Mechanics\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlaceEnter.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\SceneController\ArenaController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\SceneController\GameSceneController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SceneController\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SceneController\SceneController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\SceneController\ShopSceneController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SceneController\WorldController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SquareEnemyController.cs" />
     <Compile Include="Assets\Scripts\Model\Car.cs" />
@@ -136,9 +139,6 @@
     <Compile Include="Assets\Scripts\Model\ENtity.cs" />
     <Compile Include="Assets\Scripts\Model\IEntity.cs" />
     <Compile Include="Assets\Scripts\Model\Player.cs" />
-    <Compile Include="Assets\Scripts\UI\ArenaUIManager.cs" />
-    <Compile Include="Assets\Scripts\UI\MainMenuUIManager.cs" />
-    <Compile Include="Assets\Scripts\UI\WorldUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
