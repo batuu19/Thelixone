@@ -22,6 +22,8 @@ namespace Giereczka.Mechanics
             move = Vector2.zero;
             character = Simulation.player.character;
             body.position = character.spawnPoint;
+            //Vector3 newPos = new Vector3(character.spawnPoint.x, character.spawnPoint.y, transform.position.z);
+            //transform.position = newPos;
         }
 
         protected override void ProcessInput()

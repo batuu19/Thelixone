@@ -37,18 +37,20 @@ namespace Giereczka.Mechanics
         }
         public static Vector2 Load()
         {
-            string json = File.ReadAllText(gameSavePath);//exception if not exits
-            if (json != string.Empty)
-            {
-                var save = JsonUtility.FromJson<GameSave>(json);
-                Simulation.player = save.playerData;
-                return save.lastSeen;
-            }
-            else
-            {
-                Simulation.player = new Player();
-                return Vector2.zero;
-            }
+            StreamReader reader = new StreamReader(gameSaveFile);
+            string json = reader.ReadLine();
+
+                if (json != string.Empty)
+                {
+                    var save = JsonUtility.FromJson<GameSave>(json);
+                    Simulation.player = save.playerData;
+                    return save.lastSeen;
+                }
+                else
+                {
+                    Simulation.player = new Player();
+                    return Vector2.zero;
+                }
         }
     }
 }

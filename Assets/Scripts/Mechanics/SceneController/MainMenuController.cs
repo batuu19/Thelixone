@@ -9,7 +9,7 @@ namespace Giereczka.Mechanics
         public void LoadGame()
         {
             var pos = GameSave.Load();
-            Simulation.player.spawnPoint = pos;
+            Simulation.player.character.spawnPoint = pos;
         }
 
         public void LoadSaveAndStartGame()
