@@ -8,6 +8,11 @@ namespace Giereczka.UI
     public class MainMenuUIManager : MonoBehaviour
     {
 
+        private void Awake()
+        {
+            Debug.Log(Application.persistentDataPath);
+        }
+
         public void LoadScene(string sceneName)
         {
             SceneManager.LoadScene(sceneName);

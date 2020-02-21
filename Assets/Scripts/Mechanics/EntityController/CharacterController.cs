@@ -21,6 +21,7 @@ namespace Giereczka.Mechanics
         {
             move = Vector2.zero;
             character = Simulation.player.character;
+            body.position = character.spawnPoint;
         }
 
         protected override void ProcessInput()

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Giereczka.UI
 {
-    public class CarSceneUIManager : MonoBehaviour
+    public class ArenaUIManager : MonoBehaviour
     {
         public Canvas pauseMenu;
         bool inPauseMenu = false;
