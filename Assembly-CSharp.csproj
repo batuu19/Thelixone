@@ -114,7 +114,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\Scripts\Config\Models.cs" />
-    <Compile Include="Assets\Scripts\Core\ArrayWrapper.cs" />
+    <Compile Include="Assets\Scripts\Config\ModelsEditor.cs" />
     <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.cs" />
@@ -139,6 +139,8 @@
     <Compile Include="Assets\Scripts\Model\ENtity.cs" />
     <Compile Include="Assets\Scripts\Model\IEntity.cs" />
     <Compile Include="Assets\Scripts\Model\Player.cs" />
+    <Compile Include="Assets\Scripts\Utils\ArrayWrapper.cs" />
+    <Compile Include="Assets\Scripts\Utils\FileUtils.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

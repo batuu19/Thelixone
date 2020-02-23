@@ -3,6 +3,8 @@ using System.IO;
 using System.Text;
 using Giereczka.Core;
 using Giereczka.Model;
+using Giereczka.Utils;
+
 
 using UnityEngine;
 
@@ -18,40 +20,37 @@ namespace Giereczka.Mechanics
         [SerializeField]
         Vector2 lastSeen;
 
-        public static readonly string gameSavePath = $"{Application.persistentDataPath}\\Save";
-        public static readonly string gameSaveFile = $"{Application.persistentDataPath}\\Save\\gamesave.json";
+        public Player PlayerData { get => playerData; private set => playerData = value; }
+        public DateTime DateTime { get => dateTime; private set => dateTime = value; }
+        public Vector2 LastSeen { get => lastSeen; private set => lastSeen = value; }
+
+
+        public static readonly string saveFile = Simulation.savePath + "\\gamesave.json";
+
+        public GameSave(Player playerData, DateTime dateTime, Vector2 lastSeen)
+        {
+            this.PlayerData = playerData;
+            this.DateTime = dateTime;
+            this.LastSeen = lastSeen;
+        }
 
         public static void Save(Vector2 pos)
         {
             //xml?
             //binary data?
-            string json = JsonUtility.ToJson(new GameSave()
-            {
-                playerData = Simulation.player,
-                dateTime = DateTime.Now,
-                lastSeen = pos
-            });
-            if (!Directory.Exists(gameSavePath))
-                Directory.CreateDirectory(gameSavePath);
-            File.WriteAllText(gameSaveFile,json);
+            FileUtils.SaveToJson(saveFile, new GameSave(
+                Simulation.player,
+                DateTime.Now,
+                pos
+            ));
 
         }
         public static Vector2 Load()
         {
-            StreamReader reader = new StreamReader(gameSaveFile);
-            string json = reader.ReadLine();
+            var save = FileUtils.LoadFromJson<GameSave>(saveFile);
 
-                if (json != string.Empty)
-                {
-                    var save = JsonUtility.FromJson<GameSave>(json);
-                    Simulation.player = save.playerData;
-                    return save.lastSeen;
-                }
-                else
-                {
-                    Simulation.player = new Player();
-                    return Vector2.zero;
-                }
+            Simulation.player = save.PlayerData;
+            return save.LastSeen;
         }
     }
 }

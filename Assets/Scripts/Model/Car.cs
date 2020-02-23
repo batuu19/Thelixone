@@ -22,9 +22,13 @@ namespace Giereczka.Model
         public float attackDamage { get => _attackDamage; private set => _attackDamage = value; }
 
         private Car() { }
-        public Car(float speed, float rotSpeed, float attackDamage)
-        {
 
+        public Car(int id, float speed, float rotSpeed, float attackDamage)
+        {
+            _id = id;
+            _speed = speed;
+            _rotSpeed = rotSpeed;
+            _attackDamage = attackDamage;
         }
 
         public static List<Car> carModels = new List<Car>()
