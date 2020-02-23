@@ -8,8 +8,19 @@ using UnityEngine;
 namespace Giereczka.Utils
 {
     //add xml and binary
-    public static class FileUtils
+    public static class CustomFileUtils
     {
+        public static bool CheckDirectory(string path,bool create = true)
+        {
+            if (Directory.Exists(path))
+                return true;
+            else
+            {
+                if(create)
+                    Directory.CreateDirectory(path);
+                return false;
+            }
+        }
 
         public static T[] LoadModelsFromJson<T>(string filename) where T : IEntity
         {

@@ -38,7 +38,7 @@ namespace Giereczka.Mechanics
         {
             //xml?
             //binary data?
-            FileUtils.SaveToJson(saveFile, new GameSave(
+            CustomFileUtils.SaveToJson(saveFile, new GameSave(
                 Simulation.player,
                 DateTime.Now,
                 pos
@@ -47,7 +47,7 @@ namespace Giereczka.Mechanics
         }
         public static Vector2 Load()
         {
-            var save = FileUtils.LoadFromJson<GameSave>(saveFile);
+            var save = CustomFileUtils.LoadFromJson<GameSave>(saveFile);
 
             Simulation.player = save.PlayerData;
             return save.LastSeen;

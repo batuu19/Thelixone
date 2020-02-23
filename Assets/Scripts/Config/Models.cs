@@ -15,28 +15,29 @@ namespace Giereczka.Config
         public Character[] characterModels;
 
 
+        string fileCarModels;
+        string fileCharacterModels;
+
         private void Awake()
         {
             carModels = Car.carModels.ToArray();
             characterModels = Character.characterModels.ToArray();
         }
+        private void Start()
+        {
+            fileCarModels = $"{Simulation.configPath}//carModels.json";
+            fileCharacterModels = $"{Simulation.configPath}//characterModels.json";
+        }
         public void LoadModels()
         {
-            string fileCarModels = Simulation.configPath + "//carModels.json";
-            string fileCharacterModels = Simulation.configPath + "//characterModels.json";
-
-
+            carModels = CustomFileUtils.LoadModelsFromJson<Car>(fileCarModels);
+            characterModels = CustomFileUtils.LoadModelsFromJson<Character>(fileCharacterModels);
         }
 
         public void SaveModels()
         {
-            string json = JsonUtility.ToJson(new ArrayWrapper<Car>(carModels));
-        }
-
-        
-
-        public void Config()
-        {
+            CustomFileUtils.SaveModelsToJson(fileCarModels, carModels);
+            CustomFileUtils.SaveModelsToJson(fileCharacterModels, characterModels);
         }
     }
 }

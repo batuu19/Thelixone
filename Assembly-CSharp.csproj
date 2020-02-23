@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{EB4C7FCB-66DA-D5AD-160D-FB4B0E122FC4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -136,7 +137,7 @@
     <Compile Include="Assets\Scripts\Model\Car.cs" />
     <Compile Include="Assets\Scripts\Model\Character.cs" />
     <Compile Include="Assets\Scripts\Model\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Model\ENtity.cs" />
+    <Compile Include="Assets\Scripts\Model\Entity.cs" />
     <Compile Include="Assets\Scripts\Model\IEntity.cs" />
     <Compile Include="Assets\Scripts\Model\Player.cs" />
     <Compile Include="Assets\Scripts\Utils\ArrayWrapper.cs" />

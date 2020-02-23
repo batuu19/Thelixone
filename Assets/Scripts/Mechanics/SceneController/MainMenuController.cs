@@ -1,6 +1,7 @@
 ﻿
 using Giereczka.Core;
 using Giereczka.Model;
+using Giereczka.Utils;
 using System.IO;
 using UnityEngine;
 
@@ -10,10 +11,11 @@ namespace Giereczka.Mechanics
     {
         protected void Awake()
         {
-            if (!Directory.Exists(Application.persistentDataPath))
-            {
-                Directory.CreateDirectory(Application.persistentDataPath);
-            }
+            Simulation.savePath = $"{Application.persistentDataPath}//Save";
+            Simulation.configPath = $"{Application.persistentDataPath}//Config";
+
+            CustomFileUtils.CheckDirectory(Simulation.configPath);
+            CustomFileUtils.CheckDirectory(Simulation.savePath);
 
         }
 
