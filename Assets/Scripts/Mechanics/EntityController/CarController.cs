@@ -7,41 +7,54 @@ namespace Giereczka.Mechanics
     public class CarController : PlayableController
     {
         Car car;
+
+        //temp. TODO move to model
+        float acceleration = 70f;
+        float maxSpeed = 50f;
+        float handling = 0f;
+        //temp end
         float moveAcc = 0f;
         float moveRot = 0f;
-        private Rigidbody2D body;
-        private Collider2D collider2d;
+        private Rigidbody body;
         private SpriteRenderer spriteRenderer;
 
         public float AttackDamage => car.attackDamage;
 
         protected override void Init()
         {
-            body = GetComponent<Rigidbody2D>();
-            collider2d = GetComponent<Collider2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            body = GetComponent<Rigidbody>();
+            //Because debug
+            Simulation.player = new Player();
             car = Simulation.player.car;
         }
 
         protected override void PostInit()
         {
-            body.gravityScale = 0;
         }
 
         protected override void ProcessInput()
         {
-            moveRot = Input.GetAxisRaw("Horizontal");
             moveAcc = Input.GetAxisRaw("Vertical");
+            moveRot = Input.GetAxisRaw("Horizontal");
         }
 
         protected override void MakeCalculations()
         {
-            body.velocity = transform.rotation * Vector2.up * moveAcc * Time.deltaTime * car.speed;
+            //body.AddForce(Vector3.forward * moveAcc * Time.deltaTime * acceleration);
+            var accelerationVector = Vector3.forward * acceleration * moveAcc * Time.deltaTime;
+            var newVelocity = body.velocity + (transform.rotation * accelerationVector);
 
-            if (moveRot == 0f)
-                body.angularVelocity = 0f;
+            if(newVelocity.magnitude < maxSpeed)
+            {
+                body.velocity = newVelocity;
+            }
+            else
+            {
+                body.velocity = body.velocity.normalized * maxSpeed;
 
-            transform.Rotate(Vector3.back, Mathf.Clamp(moveRot, -1f, 1f) * Time.deltaTime * car.rotSpeed);
+            }
+            Debug.Log(body.velocity.magnitude);
+            transform.Rotate(Vector3.up, Mathf.Clamp(moveRot, -1f, 1f) * Time.deltaTime * car.rotSpeed);
         }
     }
 }
