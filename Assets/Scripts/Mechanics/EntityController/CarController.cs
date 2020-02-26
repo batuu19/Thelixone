@@ -11,12 +11,15 @@ namespace Giereczka.Mechanics
         //temp. TODO move to model
         float acceleration = 70f;
         float maxSpeed = 50f;
+        float rotSpeed = 150f;
         float handling = 0f;
         //temp end
         float moveAcc = 0f;
         float moveRot = 0f;
         private Rigidbody body;
         private SpriteRenderer spriteRenderer;
+
+        static float lastVelZ;
 
         public float AttackDamage => car.attackDamage;
 
@@ -30,6 +33,7 @@ namespace Giereczka.Mechanics
 
         protected override void PostInit()
         {
+            lastVelZ = body.velocity.z;
         }
 
         protected override void ProcessInput()
@@ -42,19 +46,17 @@ namespace Giereczka.Mechanics
         {
             //body.AddForce(Vector3.forward * moveAcc * Time.deltaTime * acceleration);
             var accelerationVector = Vector3.forward * acceleration * moveAcc * Time.deltaTime;
-            var newVelocity = body.velocity + (transform.rotation * accelerationVector);
+            var newVelocity = body.velocity + (transform.rotation * accelerationVector);//add acceleration to velocity
+            body.velocity = Vector3.ClampMagnitude(newVelocity, maxSpeed);
 
-            if(newVelocity.magnitude < maxSpeed)
-            {
-                body.velocity = newVelocity;
-            }
-            else
-            {
-                body.velocity = body.velocity.normalized * maxSpeed;
+            transform.Rotate(Vector3.up, Mathf.Clamp(moveRot, -1f, 1f) * Time.deltaTime * car.rotSpeed);//how to rotate velocity
+            //rotating velocity
+            body.velocity = transform.forward * body.velocity.magnitude;
 
-            }
-            Debug.Log(body.velocity.magnitude);
-            transform.Rotate(Vector3.up, Mathf.Clamp(moveRot, -1f, 1f) * Time.deltaTime * car.rotSpeed);
+            body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
+
+            Debug.Log(body.velocity);
+            lastVelZ = body.velocity.z;
         }
     }
 }
