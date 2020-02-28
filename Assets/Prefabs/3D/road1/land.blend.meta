@@ -29,7 +29,22 @@ ModelImporter:
     4300002: Plane.001
     4300004: Plane.002
     10800000: Light
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: c0dae478ffcc01d43aafaf1a1d2cc8d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 8c9092b960a524d419e055d71f651181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: c59e517a9cffe664998af9d3ab7f6c65, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
